@@ -4,9 +4,9 @@ from api.api_blueprint import api_bp
 
 
 def create_app():
-    app = Flask(__name__)
-    app.register_blueprint(api_bp)
-    return app
+    flask = Flask(__name__)
+    flask.register_blueprint(api_bp)
+    return flask
 
 
 if __name__ == '__main__':
