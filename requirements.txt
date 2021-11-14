@@ -1,0 +1,7 @@
+Flask==2.0.2
+Flask-RESTful==0.3.9
+Flask-SQLAlchemy==2.5.1
+joblib==1.1.0
+python-dotenv==0.19.1
+SQLAlchemy==1.4.26
+
