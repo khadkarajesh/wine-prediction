@@ -8,4 +8,4 @@ class PredictionResource(Resource):
 
     @classmethod
     def post(cls):
-        return {"message": "model predicted values successfully"}
+        return {"label": "white"}
