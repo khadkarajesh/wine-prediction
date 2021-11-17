@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 
 from api.api_blueprint import api_bp
@@ -5,11 +7,14 @@ from api.common import ma, db
 
 
 def create_app():
-    flask = Flask(__name__)
-    flask.register_blueprint(api_bp)
-    db.init_app(flask)
-    ma.init_app(flask)
-    return flask
+    app = Flask(__name__)
+    app.config.from_object(os.environ['APP_SETTINGS'])
+    app.register_blueprint(api_bp)
+    db.init_app(app)
+    ma.init_app(app)
+    with app.app_context():
+        db.create_all()
+    return app
 
 
 if __name__ == '__main__':

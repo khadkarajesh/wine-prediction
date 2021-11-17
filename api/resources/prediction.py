@@ -1,5 +1,7 @@
 from flask_restful import Resource
 
+from api.models.wine import Wine
+
 
 class PredictionResource(Resource):
     @classmethod

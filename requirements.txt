@@ -9,3 +9,4 @@ numpy~=1.21.4
 sklearn~=0.0
 requests~=2.26.0
 streamlit~=1.2.0
+python-dotenv~=0.19.1
