@@ -2,13 +2,12 @@ from os import environ, path
 from dotenv import load_dotenv
 
 basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, 'api/.env'))
+load_dotenv(path.join(basedir, '.env'))
 
 
 class Config(object):
-    """Base config, uses staging database server."""
     TESTING = False
-    DB_SERVER = '192.168.1.56'
+    DB_SERVER = ''
 
 
 class ProductionConfig(Config):
@@ -18,7 +17,8 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     DB_SERVER = 'localhost'
-    SQLALCHEMY_DATABASE_URI = f"postgresql://{environ.get('USER_NAME')}:{environ.get('USER_PASSWORD')}@{DB_SERVER}:{environ.get('DATABASE_PORT')}/{environ.get('DATABASE_NAME')} "
+    SQLALCHEMY_DATABASE_URI = f"postgresql://{environ.get('USER_NAME')}:{environ.get('USER_PASSWORD')}@{DB_SERVER}:{environ.get('DATABASE_PORT')}/{environ.get('DATABASE_NAME')}"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestingConfig(Config):
