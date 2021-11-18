@@ -6,3 +6,4 @@ class WineSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Wine
         dump_only = ('id',)
+        load_instance = True
