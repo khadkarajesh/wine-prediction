@@ -5,10 +5,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-from app import MODEL
-from app.inference import predict
-from app.preprocess import preprocess, encode_label
-from utils.model_util import save_file
+from api.ml import MODEL
+from api.ml.inference import predict
+from api.ml.preprocess import encode_label, preprocess
+from api.utils.model_util import save_file
 
 
 def train(training_data_path, model_dir):

@@ -1,3 +1,5 @@
 MODEL = "model.joblib"
 LABEL_ENCODER = "label_encoder.joblib"
 SCALAR = "scalar.joblib"
+IMPUTER = "imputer.joblib"
+COLUMN_TRANSFORMER = "column_transformer.joblib"

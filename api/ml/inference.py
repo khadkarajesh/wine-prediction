@@ -1,6 +1,6 @@
-from app import MODEL
-from app.preprocess import preprocess, decode_label
-from utils.model_util import get_file
+from api.ml import MODEL
+from api.ml.preprocess import preprocess, decode_label
+from api.utils.model_util import get_file
 
 
 def predict(dataframe, model_dir, training=False):

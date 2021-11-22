@@ -16,4 +16,12 @@ class Wine(BaseModel):
     sulphates = db.Column(db.Float, nullable=False)
     alcohol = db.Column(db.Float, nullable=False)
     quality = db.Column(db.Float, nullable=False)
-    label = db.Column(db.String, nullable=False)
+    predicted_label = db.Column(db.String)
+
+    def to_array(self):
+        return [self.fixed_acidity, self.volatile_acidity,
+                self.citric_acid, self.residual_sugar,
+                self.chlorides, self.free_sulfur_dioxide,
+                self.total_sulfur_dioxide, self.density,
+                self.ph, self.sulphates,
+                self.alcohol, self.quality]
