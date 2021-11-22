@@ -22,8 +22,9 @@ Right now repository consist the following apps:
    ```shell
    export config=DevelopmentConfig
    ```
-4. create database for posgresSQL
-   i) creaate database in posgresSQL
+4. create database for posgresSQL   
+   i) creaate database in posgresSQL   
+   
    ii) create .env in the project schemas directory to provide postgresSQL db name, user, password and db port.
    default posgresSQL user : postgres
 
