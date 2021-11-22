@@ -40,9 +40,9 @@ if submit_button:
         'alcohol': alcohol,
         'quality': quality
     }
-    response: Response = requests.post(BASE_URL + "/predictions", body)
+    response: Response = requests.post(BASE_URL + "/predictions", json=body)
     if response.status_code == 200:
         response_body = response.json()
-        st.write(f"Wine label is :{response_body['label']}")
+        st.write(f"Wine label is :{response_body['predicted_label']}")
     else:
         st.write(f"Couldn't predict wine label")
