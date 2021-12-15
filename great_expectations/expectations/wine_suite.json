@@ -1,0 +1,3545 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "wine_suite",
+  "expectations": [
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "fixed acidity",
+          "volatile acidity",
+          "citric acid",
+          "residual sugar",
+          "chlorides",
+          "free sulfur dioxide",
+          "total sulfur dioxide",
+          "density",
+          "pH",
+          "sulphates",
+          "alcohol",
+          "quality",
+          "label"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 6497,
+        "min_value": 6497
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 3.8,
+        "min_value": 3.8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 15.9,
+        "min_value": 15.9
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 7.215307064799138,
+        "min_value": 7.215307064799138
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 7.0,
+        "min_value": 7.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "fixed acidity",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              5.7,
+              5.7
+            ],
+            [
+              6.4,
+              6.4
+            ],
+            [
+              7.0,
+              7.0
+            ],
+            [
+              7.7,
+              7.7
+            ],
+            [
+              9.8,
+              9.8
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "fixed acidity",
+        "value_set": [
+          3.8,
+          3.9,
+          4.2,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9,
+          6.0,
+          6.1,
+          6.15,
+          6.2,
+          6.3,
+          6.4,
+          6.45,
+          6.5,
+          6.6,
+          6.7,
+          6.8,
+          6.9,
+          7.0,
+          7.1,
+          7.15,
+          7.2,
+          7.3,
+          7.4,
+          7.5,
+          7.6,
+          7.7,
+          7.8,
+          7.9,
+          8.0,
+          8.1,
+          8.2,
+          8.3,
+          8.4,
+          8.5,
+          8.6,
+          8.7,
+          8.8,
+          8.9,
+          9.0,
+          9.1,
+          9.2,
+          9.3,
+          9.4,
+          9.5,
+          9.6,
+          9.7,
+          9.8,
+          9.9,
+          10.0,
+          10.1,
+          10.2,
+          10.3,
+          10.4,
+          10.5,
+          10.6,
+          10.7,
+          10.8,
+          10.9,
+          11.0,
+          11.1,
+          11.2,
+          11.3,
+          11.4,
+          11.5,
+          11.6,
+          11.7,
+          11.8,
+          11.9,
+          12.0,
+          12.1,
+          12.2,
+          12.3,
+          12.4,
+          12.5,
+          12.6,
+          12.7,
+          12.8,
+          12.9,
+          13.0,
+          13.2,
+          13.3,
+          13.4,
+          13.5,
+          13.7,
+          13.8,
+          14.0,
+          14.2,
+          14.3,
+          15.0,
+          15.5,
+          15.6,
+          15.9
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "fixed acidity"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 0.016315222410343236,
+        "min_value": 0.016315222410343236
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "fixed acidity",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 0.08,
+        "min_value": 0.08
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 1.58,
+        "min_value": 1.58
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 0.33966599969216565,
+        "min_value": 0.33966599969216565
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 0.29,
+        "min_value": 0.29
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "volatile acidity",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.16,
+              0.16
+            ],
+            [
+              0.23,
+              0.23
+            ],
+            [
+              0.29,
+              0.29
+            ],
+            [
+              0.4,
+              0.4
+            ],
+            [
+              0.67,
+              0.67
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "volatile acidity",
+        "value_set": [
+          0.08,
+          0.085,
+          0.09,
+          0.1,
+          0.105,
+          0.11,
+          0.115,
+          0.12,
+          0.125,
+          0.13,
+          0.135,
+          0.14,
+          0.145,
+          0.15,
+          0.155,
+          0.16,
+          0.165,
+          0.17,
+          0.175,
+          0.18,
+          0.185,
+          0.19,
+          0.2,
+          0.205,
+          0.21,
+          0.215,
+          0.22,
+          0.225,
+          0.23,
+          0.235,
+          0.24,
+          0.245,
+          0.25,
+          0.255,
+          0.26,
+          0.265,
+          0.27,
+          0.275,
+          0.28,
+          0.285,
+          0.29,
+          0.295,
+          0.3,
+          0.305,
+          0.31,
+          0.315,
+          0.32,
+          0.325,
+          0.33,
+          0.335,
+          0.34,
+          0.345,
+          0.35,
+          0.355,
+          0.36,
+          0.365,
+          0.37,
+          0.375,
+          0.38,
+          0.385,
+          0.39,
+          0.395,
+          0.4,
+          0.405,
+          0.41,
+          0.415,
+          0.42,
+          0.425,
+          0.43,
+          0.435,
+          0.44,
+          0.445,
+          0.45,
+          0.455,
+          0.46,
+          0.47,
+          0.475,
+          0.48,
+          0.485,
+          0.49,
+          0.495,
+          0.5,
+          0.51,
+          0.52,
+          0.53,
+          0.54,
+          0.545,
+          0.55,
+          0.555,
+          0.56,
+          0.565,
+          0.57,
+          0.575,
+          0.58,
+          0.585,
+          0.59,
+          0.595,
+          0.6,
+          0.605,
+          0.61,
+          0.615,
+          0.62,
+          0.625,
+          0.63,
+          0.635,
+          0.64,
+          0.645,
+          0.65,
+          0.655,
+          0.66,
+          0.665,
+          0.67,
+          0.675,
+          0.68,
+          0.685,
+          0.69,
+          0.695,
+          0.7,
+          0.705,
+          0.71,
+          0.715,
+          0.72,
+          0.725,
+          0.73,
+          0.735,
+          0.74,
+          0.745,
+          0.75,
+          0.755,
+          0.76,
+          0.765,
+          0.77,
+          0.775,
+          0.78,
+          0.785,
+          0.79,
+          0.795,
+          0.8,
+          0.805,
+          0.81,
+          0.815,
+          0.82,
+          0.825,
+          0.83,
+          0.835,
+          0.84,
+          0.845,
+          0.85,
+          0.855,
+          0.86,
+          0.865,
+          0.87,
+          0.875,
+          0.88,
+          0.885,
+          0.89,
+          0.895,
+          0.9,
+          0.905,
+          0.91,
+          0.915,
+          0.92,
+          0.93,
+          0.935,
+          0.95,
+          0.955,
+          0.96,
+          0.965,
+          0.975,
+          0.98,
+          1.0,
+          1.005,
+          1.01,
+          1.02,
+          1.025,
+          1.035,
+          1.04,
+          1.07,
+          1.09,
+          1.1,
+          1.115,
+          1.13,
+          1.18,
+          1.185,
+          1.24,
+          1.33,
+          1.58
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "volatile acidity"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 0.028782515006926274,
+        "min_value": 0.028782515006926274
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "volatile acidity",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 1.66,
+        "min_value": 1.66
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 0.3186332153301524,
+        "min_value": 0.3186332153301524
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 0.31,
+        "min_value": 0.31
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "citric acid",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.05,
+              0.05
+            ],
+            [
+              0.25,
+              0.25
+            ],
+            [
+              0.31,
+              0.31
+            ],
+            [
+              0.39,
+              0.39
+            ],
+            [
+              0.56,
+              0.56
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "citric acid",
+        "value_set": [
+          0.0,
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05,
+          0.06,
+          0.07,
+          0.08,
+          0.09,
+          0.1,
+          0.11,
+          0.12,
+          0.13,
+          0.14,
+          0.15,
+          0.16,
+          0.17,
+          0.18,
+          0.19,
+          0.2,
+          0.21,
+          0.22,
+          0.23,
+          0.24,
+          0.25,
+          0.26,
+          0.27,
+          0.28,
+          0.29,
+          0.3,
+          0.31,
+          0.32,
+          0.33,
+          0.34,
+          0.35,
+          0.36,
+          0.37,
+          0.38,
+          0.39,
+          0.4,
+          0.41,
+          0.42,
+          0.43,
+          0.44,
+          0.45,
+          0.46,
+          0.47,
+          0.48,
+          0.49,
+          0.5,
+          0.51,
+          0.52,
+          0.53,
+          0.54,
+          0.55,
+          0.56,
+          0.57,
+          0.58,
+          0.59,
+          0.6,
+          0.61,
+          0.62,
+          0.63,
+          0.64,
+          0.65,
+          0.66,
+          0.67,
+          0.68,
+          0.69,
+          0.7,
+          0.71,
+          0.72,
+          0.73,
+          0.74,
+          0.75,
+          0.76,
+          0.78,
+          0.79,
+          0.8,
+          0.81,
+          0.82,
+          0.86,
+          0.88,
+          0.91,
+          0.99,
+          1.0,
+          1.23,
+          1.66
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "citric acid"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 0.0136986301369863,
+        "min_value": 0.0136986301369863
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "citric acid",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 0.6,
+        "min_value": 0.6
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 65.8,
+        "min_value": 65.8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 5.443235339387409,
+        "min_value": 5.443235339387409
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 3.0,
+        "min_value": 3.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "residual sugar",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              1.2,
+              1.2
+            ],
+            [
+              1.8,
+              1.8
+            ],
+            [
+              3.0,
+              3.0
+            ],
+            [
+              8.1,
+              8.1
+            ],
+            [
+              15.0,
+              15.0
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "residual sugar",
+        "value_set": [
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          0.95,
+          1.0,
+          1.05,
+          1.1,
+          1.15,
+          1.2,
+          1.25,
+          1.3,
+          1.35,
+          1.4,
+          1.45,
+          1.5,
+          1.55,
+          1.6,
+          1.65,
+          1.7,
+          1.75,
+          1.8,
+          1.85,
+          1.9,
+          1.95,
+          2.0,
+          2.05,
+          2.1,
+          2.15,
+          2.2,
+          2.25,
+          2.3,
+          2.35,
+          2.4,
+          2.5,
+          2.55,
+          2.6,
+          2.65,
+          2.7,
+          2.8,
+          2.85,
+          2.9,
+          2.95,
+          3.0,
+          3.1,
+          3.15,
+          3.2,
+          3.3,
+          3.4,
+          3.45,
+          3.5,
+          3.6,
+          3.65,
+          3.7,
+          3.75,
+          3.8,
+          3.85,
+          3.9,
+          3.95,
+          4.0,
+          4.1,
+          4.2,
+          4.25,
+          4.3,
+          4.35,
+          4.4,
+          4.45,
+          4.5,
+          4.55,
+          4.6,
+          4.65,
+          4.7,
+          4.75,
+          4.8,
+          4.85,
+          4.9,
+          5.0,
+          5.1,
+          5.15,
+          5.2,
+          5.25,
+          5.3,
+          5.35,
+          5.4,
+          5.45,
+          5.5,
+          5.55,
+          5.6,
+          5.7,
+          5.8,
+          5.85,
+          5.9,
+          5.95,
+          6.0,
+          6.1,
+          6.2,
+          6.3,
+          6.35,
+          6.4,
+          6.5,
+          6.55,
+          6.6,
+          6.65,
+          6.7,
+          6.75,
+          6.8,
+          6.85,
+          6.9,
+          6.95,
+          7.0,
+          7.05,
+          7.1,
+          7.2,
+          7.25,
+          7.3,
+          7.35,
+          7.4,
+          7.45,
+          7.5,
+          7.6,
+          7.7,
+          7.75,
+          7.8,
+          7.85,
+          7.9,
+          7.95,
+          8.0,
+          8.1,
+          8.15,
+          8.2,
+          8.25,
+          8.3,
+          8.4,
+          8.45,
+          8.5,
+          8.55,
+          8.6,
+          8.65,
+          8.7,
+          8.75,
+          8.8,
+          8.9,
+          8.95,
+          9.0,
+          9.05,
+          9.1,
+          9.15,
+          9.2,
+          9.25,
+          9.3,
+          9.4,
+          9.5,
+          9.55,
+          9.6,
+          9.65,
+          9.7,
+          9.8,
+          9.85,
+          9.9,
+          10.0,
+          10.05,
+          10.1,
+          10.2,
+          10.3,
+          10.4,
+          10.5,
+          10.55,
+          10.6,
+          10.65,
+          10.7,
+          10.8,
+          10.9,
+          11.0,
+          11.1,
+          11.2,
+          11.25,
+          11.3,
+          11.4,
+          11.45,
+          11.5,
+          11.6,
+          11.7,
+          11.75,
+          11.8,
+          11.9,
+          11.95,
+          12.0,
+          12.05,
+          12.1,
+          12.15,
+          12.2,
+          12.3,
+          12.4,
+          12.5,
+          12.55,
+          12.6,
+          12.7,
+          12.75,
+          12.8,
+          12.85,
+          12.9,
+          13.0,
+          13.1,
+          13.15,
+          13.2,
+          13.3,
+          13.4,
+          13.5,
+          13.55,
+          13.6,
+          13.65,
+          13.7,
+          13.8,
+          13.9,
+          14.0,
+          14.05,
+          14.1,
+          14.15,
+          14.2,
+          14.3,
+          14.35,
+          14.4,
+          14.45,
+          14.5,
+          14.55,
+          14.6,
+          14.7,
+          14.75,
+          14.8,
+          14.9,
+          14.95,
+          15.0,
+          15.1,
+          15.15,
+          15.2,
+          15.25,
+          15.3,
+          15.4,
+          15.5,
+          15.55,
+          15.6,
+          15.7,
+          15.75,
+          15.8,
+          15.9,
+          16.0,
+          16.05,
+          16.1,
+          16.2,
+          16.3,
+          16.4,
+          16.45,
+          16.5,
+          16.55,
+          16.6,
+          16.65,
+          16.7,
+          16.75,
+          16.8,
+          16.85,
+          16.9,
+          16.95,
+          17.0,
+          17.05,
+          17.1,
+          17.2,
+          17.3,
+          17.35,
+          17.4,
+          17.45,
+          17.5,
+          17.55,
+          17.6,
+          17.7,
+          17.75,
+          17.8,
+          17.85,
+          17.9,
+          17.95,
+          18.0,
+          18.05,
+          18.1,
+          18.15,
+          18.2,
+          18.3,
+          18.35,
+          18.4,
+          18.5,
+          18.6,
+          18.75,
+          18.8,
+          18.9,
+          18.95,
+          19.1,
+          19.25,
+          19.3,
+          19.35,
+          19.4,
+          19.45,
+          19.5,
+          19.6,
+          19.8,
+          19.9,
+          19.95,
+          20.15,
+          20.2,
+          20.3,
+          20.4,
+          20.7,
+          20.8,
+          22.0,
+          22.6,
+          23.5,
+          26.05,
+          31.6,
+          65.8
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "residual sugar"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 0.04863783284592889,
+        "min_value": 0.04863783284592889
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "residual sugar",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 0.009,
+        "min_value": 0.009
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 0.611,
+        "min_value": 0.611
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 0.05603386178236109,
+        "min_value": 0.05603386178236109
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 0.047,
+        "min_value": 0.047
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "chlorides",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.028,
+              0.028
+            ],
+            [
+              0.038,
+              0.038
+            ],
+            [
+              0.047,
+              0.047
+            ],
+            [
+              0.065,
+              0.065
+            ],
+            [
+              0.102,
+              0.102
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "chlorides",
+        "value_set": [
+          0.009,
+          0.012,
+          0.013,
+          0.014,
+          0.015,
+          0.016,
+          0.017,
+          0.018,
+          0.019,
+          0.02,
+          0.021,
+          0.022,
+          0.023,
+          0.024,
+          0.025,
+          0.026,
+          0.027,
+          0.028,
+          0.029,
+          0.03,
+          0.031,
+          0.032,
+          0.033,
+          0.034,
+          0.035,
+          0.036,
+          0.037,
+          0.038,
+          0.039,
+          0.04,
+          0.041,
+          0.042,
+          0.043,
+          0.044,
+          0.045,
+          0.046,
+          0.047,
+          0.048,
+          0.049,
+          0.05,
+          0.051,
+          0.052,
+          0.053,
+          0.054,
+          0.055,
+          0.056,
+          0.057,
+          0.058,
+          0.059,
+          0.06,
+          0.061,
+          0.062,
+          0.063,
+          0.064,
+          0.065,
+          0.066,
+          0.067,
+          0.068,
+          0.069,
+          0.07,
+          0.071,
+          0.072,
+          0.073,
+          0.074,
+          0.075,
+          0.076,
+          0.077,
+          0.078,
+          0.079,
+          0.08,
+          0.081,
+          0.082,
+          0.083,
+          0.084,
+          0.085,
+          0.086,
+          0.087,
+          0.088,
+          0.089,
+          0.09,
+          0.091,
+          0.092,
+          0.093,
+          0.094,
+          0.095,
+          0.096,
+          0.097,
+          0.098,
+          0.099,
+          0.1,
+          0.101,
+          0.102,
+          0.103,
+          0.104,
+          0.105,
+          0.106,
+          0.107,
+          0.108,
+          0.109,
+          0.11,
+          0.111,
+          0.112,
+          0.113,
+          0.114,
+          0.115,
+          0.116,
+          0.117,
+          0.118,
+          0.119,
+          0.12,
+          0.121,
+          0.122,
+          0.123,
+          0.124,
+          0.125,
+          0.126,
+          0.127,
+          0.128,
+          0.13,
+          0.132,
+          0.133,
+          0.135,
+          0.136,
+          0.137,
+          0.138,
+          0.142,
+          0.143,
+          0.144,
+          0.145,
+          0.146,
+          0.147,
+          0.148,
+          0.149,
+          0.15,
+          0.152,
+          0.153,
+          0.154,
+          0.156,
+          0.157,
+          0.158,
+          0.159,
+          0.16,
+          0.161,
+          0.165,
+          0.166,
+          0.167,
+          0.168,
+          0.169,
+          0.17,
+          0.171,
+          0.172,
+          0.173,
+          0.174,
+          0.175,
+          0.176,
+          0.178,
+          0.179,
+          0.18,
+          0.184,
+          0.185,
+          0.186,
+          0.19,
+          0.194,
+          0.197,
+          0.2,
+          0.201,
+          0.204,
+          0.205,
+          0.208,
+          0.209,
+          0.211,
+          0.212,
+          0.213,
+          0.214,
+          0.216,
+          0.217,
+          0.222,
+          0.226,
+          0.23,
+          0.235,
+          0.236,
+          0.239,
+          0.24,
+          0.241,
+          0.243,
+          0.244,
+          0.25,
+          0.255,
+          0.263,
+          0.267,
+          0.27,
+          0.271,
+          0.29,
+          0.301,
+          0.332,
+          0.337,
+          0.341,
+          0.343,
+          0.346,
+          0.358,
+          0.36,
+          0.368,
+          0.369,
+          0.387,
+          0.401,
+          0.403,
+          0.413,
+          0.414,
+          0.415,
+          0.422,
+          0.464,
+          0.467,
+          0.61,
+          0.611
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "chlorides"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 0.032938279205787284,
+        "min_value": 0.032938279205787284
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "chlorides",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 1.0,
+        "min_value": 1.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 289.0,
+        "min_value": 289.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 30.525319378174544,
+        "min_value": 30.525319378174544
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 29.0,
+        "min_value": 29.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "free sulfur dioxide",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              6.0,
+              6.0
+            ],
+            [
+              17.0,
+              17.0
+            ],
+            [
+              29.0,
+              29.0
+            ],
+            [
+              41.0,
+              41.0
+            ],
+            [
+              61.0,
+              61.0
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "value_set": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          5.5,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          11.5,
+          12.0,
+          13.0,
+          14.0,
+          15.0,
+          15.5,
+          16.0,
+          17.0,
+          18.0,
+          19.0,
+          19.5,
+          20.0,
+          21.0,
+          22.0,
+          23.0,
+          23.5,
+          24.0,
+          25.0,
+          26.0,
+          27.0,
+          28.0,
+          28.5,
+          29.0,
+          30.0,
+          30.5,
+          31.0,
+          32.0,
+          33.0,
+          34.0,
+          35.0,
+          35.5,
+          36.0,
+          37.0,
+          37.5,
+          38.0,
+          38.5,
+          39.0,
+          39.5,
+          40.0,
+          40.5,
+          41.0,
+          41.5,
+          42.0,
+          42.5,
+          43.0,
+          43.5,
+          44.0,
+          44.5,
+          45.0,
+          46.0,
+          47.0,
+          48.0,
+          48.5,
+          49.0,
+          50.0,
+          50.5,
+          51.0,
+          51.5,
+          52.0,
+          52.5,
+          53.0,
+          54.0,
+          55.0,
+          56.0,
+          57.0,
+          58.0,
+          59.0,
+          59.5,
+          60.0,
+          60.5,
+          61.0,
+          61.5,
+          62.0,
+          63.0,
+          64.0,
+          64.5,
+          65.0,
+          66.0,
+          67.0,
+          68.0,
+          69.0,
+          70.0,
+          70.5,
+          71.0,
+          72.0,
+          73.0,
+          73.5,
+          74.0,
+          75.0,
+          76.0,
+          77.0,
+          77.5,
+          78.0,
+          79.0,
+          79.5,
+          80.0,
+          81.0,
+          82.0,
+          82.5,
+          83.0,
+          85.0,
+          86.0,
+          87.0,
+          88.0,
+          89.0,
+          93.0,
+          95.0,
+          96.0,
+          97.0,
+          98.0,
+          101.0,
+          105.0,
+          108.0,
+          110.0,
+          112.0,
+          118.5,
+          122.5,
+          124.0,
+          128.0,
+          131.0,
+          138.5,
+          146.5,
+          289.0
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "free sulfur dioxide"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 0.020778820994305065,
+        "min_value": 0.020778820994305065
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 6.0,
+        "min_value": 6.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 440.0,
+        "min_value": 440.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 115.7445744189626,
+        "min_value": 115.7445744189626
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 118.0,
+        "min_value": 118.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "total sulfur dioxide",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              19.0,
+              19.0
+            ],
+            [
+              77.0,
+              77.0
+            ],
+            [
+              118.0,
+              118.0
+            ],
+            [
+              156.0,
+              156.0
+            ],
+            [
+              206.0,
+              206.0
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "value_set": [
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0,
+          13.0,
+          14.0,
+          15.0,
+          16.0,
+          17.0,
+          18.0,
+          19.0,
+          20.0,
+          21.0,
+          22.0,
+          23.0,
+          24.0,
+          25.0,
+          26.0,
+          27.0,
+          28.0,
+          29.0,
+          30.0,
+          31.0,
+          32.0,
+          33.0,
+          34.0,
+          35.0,
+          36.0,
+          37.0,
+          38.0,
+          39.0,
+          40.0,
+          41.0,
+          42.0,
+          43.0,
+          44.0,
+          45.0,
+          46.0,
+          47.0,
+          48.0,
+          49.0,
+          50.0,
+          51.0,
+          52.0,
+          53.0,
+          54.0,
+          55.0,
+          56.0,
+          57.0,
+          58.0,
+          59.0,
+          60.0,
+          61.0,
+          62.0,
+          63.0,
+          64.0,
+          65.0,
+          66.0,
+          67.0,
+          68.0,
+          69.0,
+          70.0,
+          71.0,
+          72.0,
+          73.0,
+          74.0,
+          75.0,
+          76.0,
+          77.0,
+          77.5,
+          78.0,
+          79.0,
+          80.0,
+          81.0,
+          82.0,
+          83.0,
+          84.0,
+          85.0,
+          86.0,
+          87.0,
+          88.0,
+          89.0,
+          90.0,
+          91.0,
+          92.0,
+          93.0,
+          94.0,
+          95.0,
+          96.0,
+          97.0,
+          98.0,
+          99.0,
+          100.0,
+          101.0,
+          102.0,
+          103.0,
+          104.0,
+          105.0,
+          106.0,
+          107.0,
+          108.0,
+          109.0,
+          110.0,
+          111.0,
+          112.0,
+          113.0,
+          114.0,
+          115.0,
+          115.5,
+          116.0,
+          117.0,
+          118.0,
+          119.0,
+          120.0,
+          121.0,
+          122.0,
+          123.0,
+          124.0,
+          125.0,
+          126.0,
+          127.0,
+          128.0,
+          129.0,
+          129.5,
+          130.0,
+          131.0,
+          132.0,
+          133.0,
+          134.0,
+          135.0,
+          136.0,
+          137.0,
+          138.0,
+          139.0,
+          140.0,
+          141.0,
+          142.0,
+          143.0,
+          144.0,
+          145.0,
+          146.0,
+          147.0,
+          148.0,
+          149.0,
+          150.0,
+          151.0,
+          152.0,
+          153.0,
+          154.0,
+          155.0,
+          156.0,
+          157.0,
+          158.0,
+          159.0,
+          160.0,
+          161.0,
+          162.0,
+          162.5,
+          163.0,
+          164.0,
+          164.5,
+          165.0,
+          166.0,
+          167.0,
+          168.0,
+          169.0,
+          170.0,
+          171.0,
+          172.0,
+          173.0,
+          174.0,
+          175.0,
+          176.0,
+          176.5,
+          177.0,
+          178.0,
+          179.0,
+          180.0,
+          181.0,
+          182.0,
+          183.0,
+          184.0,
+          185.0,
+          186.0,
+          187.0,
+          188.0,
+          189.0,
+          189.5,
+          190.0,
+          191.0,
+          192.0,
+          193.0,
+          194.0,
+          195.0,
+          196.0,
+          197.0,
+          198.0,
+          199.0,
+          200.0,
+          201.0,
+          202.0,
+          203.0,
+          204.0,
+          205.0,
+          206.0,
+          207.0,
+          208.0,
+          209.0,
+          210.0,
+          211.0,
+          212.0,
+          212.5,
+          213.0,
+          214.0,
+          215.0,
+          216.0,
+          216.5,
+          217.0,
+          217.5,
+          218.0,
+          218.5,
+          219.0,
+          219.5,
+          220.0,
+          221.0,
+          222.0,
+          223.0,
+          224.0,
+          225.0,
+          226.0,
+          227.0,
+          228.0,
+          229.0,
+          230.0,
+          231.0,
+          232.0,
+          233.0,
+          234.0,
+          234.5,
+          235.0,
+          236.0,
+          237.0,
+          238.0,
+          238.5,
+          240.0,
+          241.0,
+          242.0,
+          243.0,
+          244.0,
+          245.0,
+          246.0,
+          247.0,
+          248.0,
+          249.0,
+          249.5,
+          251.0,
+          252.0,
+          253.0,
+          255.0,
+          256.0,
+          259.0,
+          260.0,
+          272.0,
+          278.0,
+          282.0,
+          289.0,
+          294.0,
+          303.0,
+          307.5,
+          313.0,
+          344.0,
+          366.5,
+          440.0
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "total sulfur dioxide"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 0.042481145143912574,
+        "min_value": 0.042481145143912574
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 0.98711,
+        "min_value": 0.98711
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 1.03898,
+        "min_value": 1.03898
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 0.9946966338309989,
+        "min_value": 0.9946966338309989
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 0.99489,
+        "min_value": 0.99489
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "density",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.9899,
+              0.9899
+            ],
+            [
+              0.99234,
+              0.99234
+            ],
+            [
+              0.99489,
+              0.99489
+            ],
+            [
+              0.99699,
+              0.99699
+            ],
+            [
+              0.99939,
+              0.99939
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "density"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 0.15360935816530707,
+        "min_value": 0.15360935816530707
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "density",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 2.72,
+        "min_value": 2.72
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 4.01,
+        "min_value": 4.01
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 3.2185008465445586,
+        "min_value": 3.2185008465445586
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 3.21,
+        "min_value": 3.21
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "pH",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              2.97,
+              2.97
+            ],
+            [
+              3.11,
+              3.11
+            ],
+            [
+              3.21,
+              3.21
+            ],
+            [
+              3.32,
+              3.32
+            ],
+            [
+              3.5,
+              3.5
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "pH",
+        "value_set": [
+          2.72,
+          2.74,
+          2.77,
+          2.79,
+          2.8,
+          2.82,
+          2.83,
+          2.84,
+          2.85,
+          2.86,
+          2.87,
+          2.88,
+          2.89,
+          2.9,
+          2.91,
+          2.92,
+          2.93,
+          2.94,
+          2.95,
+          2.96,
+          2.97,
+          2.98,
+          2.99,
+          3.0,
+          3.01,
+          3.02,
+          3.03,
+          3.04,
+          3.05,
+          3.06,
+          3.07,
+          3.08,
+          3.09,
+          3.1,
+          3.11,
+          3.12,
+          3.13,
+          3.14,
+          3.15,
+          3.16,
+          3.17,
+          3.18,
+          3.19,
+          3.2,
+          3.21,
+          3.22,
+          3.23,
+          3.24,
+          3.25,
+          3.26,
+          3.27,
+          3.28,
+          3.29,
+          3.3,
+          3.31,
+          3.32,
+          3.33,
+          3.34,
+          3.35,
+          3.36,
+          3.37,
+          3.38,
+          3.39,
+          3.4,
+          3.41,
+          3.42,
+          3.43,
+          3.44,
+          3.45,
+          3.46,
+          3.47,
+          3.48,
+          3.49,
+          3.5,
+          3.51,
+          3.52,
+          3.53,
+          3.54,
+          3.55,
+          3.56,
+          3.57,
+          3.58,
+          3.59,
+          3.6,
+          3.61,
+          3.62,
+          3.63,
+          3.64,
+          3.65,
+          3.66,
+          3.67,
+          3.68,
+          3.69,
+          3.7,
+          3.71,
+          3.72,
+          3.74,
+          3.75,
+          3.76,
+          3.77,
+          3.78,
+          3.79,
+          3.8,
+          3.81,
+          3.82,
+          3.85,
+          3.9,
+          4.01
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pH"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 0.01662305679544405,
+        "min_value": 0.01662305679544405
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "pH",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 0.22,
+        "min_value": 0.22
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 2.0,
+        "min_value": 2.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 0.5312682776666153,
+        "min_value": 0.5312682776666153
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 0.51,
+        "min_value": 0.51
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "sulphates",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.35,
+              0.35
+            ],
+            [
+              0.43,
+              0.43
+            ],
+            [
+              0.51,
+              0.51
+            ],
+            [
+              0.6,
+              0.6
+            ],
+            [
+              0.79,
+              0.79
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "sulphates",
+        "value_set": [
+          0.22,
+          0.23,
+          0.25,
+          0.26,
+          0.27,
+          0.28,
+          0.29,
+          0.3,
+          0.31,
+          0.32,
+          0.33,
+          0.34,
+          0.35,
+          0.36,
+          0.37,
+          0.38,
+          0.39,
+          0.4,
+          0.41,
+          0.42,
+          0.43,
+          0.44,
+          0.45,
+          0.46,
+          0.47,
+          0.48,
+          0.49,
+          0.5,
+          0.51,
+          0.52,
+          0.53,
+          0.54,
+          0.55,
+          0.56,
+          0.57,
+          0.58,
+          0.59,
+          0.6,
+          0.61,
+          0.62,
+          0.63,
+          0.64,
+          0.65,
+          0.66,
+          0.67,
+          0.68,
+          0.69,
+          0.7,
+          0.71,
+          0.72,
+          0.73,
+          0.74,
+          0.75,
+          0.76,
+          0.77,
+          0.78,
+          0.79,
+          0.8,
+          0.81,
+          0.82,
+          0.83,
+          0.84,
+          0.85,
+          0.86,
+          0.87,
+          0.88,
+          0.89,
+          0.9,
+          0.91,
+          0.92,
+          0.93,
+          0.94,
+          0.95,
+          0.96,
+          0.97,
+          0.98,
+          0.99,
+          1.0,
+          1.01,
+          1.02,
+          1.03,
+          1.04,
+          1.05,
+          1.06,
+          1.07,
+          1.08,
+          1.09,
+          1.1,
+          1.11,
+          1.12,
+          1.13,
+          1.14,
+          1.15,
+          1.16,
+          1.17,
+          1.18,
+          1.2,
+          1.22,
+          1.26,
+          1.28,
+          1.31,
+          1.33,
+          1.34,
+          1.36,
+          1.56,
+          1.59,
+          1.61,
+          1.62,
+          1.95,
+          1.98,
+          2.0
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "sulphates"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 0.017084808373095273,
+        "min_value": 0.017084808373095273
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "sulphates",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 8.0,
+        "min_value": 8.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 14.9,
+        "min_value": 14.9
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 10.491800831152842,
+        "min_value": 10.491800831152842
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 10.3,
+        "min_value": 10.3
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "alcohol",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              9.0,
+              9.0
+            ],
+            [
+              9.5,
+              9.5
+            ],
+            [
+              10.3,
+              10.3
+            ],
+            [
+              11.3,
+              11.3
+            ],
+            [
+              12.7,
+              12.7
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "alcohol",
+        "value_set": [
+          8.0,
+          8.4,
+          8.5,
+          8.6,
+          8.7,
+          8.8,
+          8.9,
+          9.0,
+          9.05,
+          9.1,
+          9.2,
+          9.23333333333333,
+          9.25,
+          9.3,
+          9.4,
+          9.5,
+          9.53333333333333,
+          9.55,
+          9.56666666666667,
+          9.6,
+          9.63333333333333,
+          9.7,
+          9.73333333333333,
+          9.75,
+          9.8,
+          9.9,
+          9.95,
+          10.0,
+          10.0333333333333,
+          10.1,
+          10.1333333333333,
+          10.15,
+          10.2,
+          10.3,
+          10.4,
+          10.4666666666667,
+          10.5,
+          10.5333333333333,
+          10.55,
+          10.5666666666667,
+          10.6,
+          10.65,
+          10.7,
+          10.75,
+          10.8,
+          10.9,
+          10.9333333333333,
+          10.9666666666667,
+          10.98,
+          11.0,
+          11.05,
+          11.0666666666667,
+          11.1,
+          11.2,
+          11.2666666666667,
+          11.3,
+          11.3333333333333,
+          11.35,
+          11.3666666666667,
+          11.4,
+          11.4333333333333,
+          11.45,
+          11.4666666666667,
+          11.5,
+          11.55,
+          11.6,
+          11.6333333333333,
+          11.65,
+          11.7,
+          11.7333333333333,
+          11.75,
+          11.8,
+          11.85,
+          11.9,
+          11.94,
+          11.95,
+          12.0,
+          12.05,
+          12.0666666666667,
+          12.1,
+          12.15,
+          12.2,
+          12.25,
+          12.3,
+          12.3333333333333,
+          12.4,
+          12.5,
+          12.6,
+          12.7,
+          12.75,
+          12.8,
+          12.8933333333333,
+          12.9,
+          13.0,
+          13.05,
+          13.1,
+          13.1333333333333,
+          13.2,
+          13.3,
+          13.4,
+          13.5,
+          13.55,
+          13.5666666666667,
+          13.6,
+          13.7,
+          13.8,
+          13.9,
+          14.0,
+          14.05,
+          14.2,
+          14.9
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "alcohol"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 0.017084808373095273,
+        "min_value": 0.017084808373095273
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "alcohol",
+        "type_list": [
+          "FLOAT",
+          "FLOAT4",
+          "FLOAT8",
+          "FLOAT64",
+          "DOUBLE",
+          "DOUBLE_PRECISION",
+          "NUMERIC",
+          "FloatType",
+          "DoubleType",
+          "float",
+          "float_",
+          "float16",
+          "float32",
+          "float64",
+          "number",
+          "DECIMAL",
+          "REAL"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "quality",
+        "max_value": 3,
+        "min_value": 3
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "quality",
+        "max_value": 9,
+        "min_value": 9
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "quality",
+        "max_value": 5.818377712790519,
+        "min_value": 5.818377712790519
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "quality",
+        "max_value": 6.0,
+        "min_value": 6.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": "lower",
+        "column": "quality",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "quality",
+        "value_set": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "quality"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+      "kwargs": {
+        "column": "quality",
+        "max_value": 0.0010774203478528552,
+        "min_value": 0.0010774203478528552
+      },
+      "meta": {}
+    },
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_values_to_be_in_type_list",
+      "kwargs": {
+        "column": "quality",
+        "type_list": [
+          "INTEGER",
+          "integer",
+          "int",
+          "int_",
+          "int8",
+          "int16",
+          "int32",
+          "int64",
+          "uint8",
+          "uint16",
+          "uint32",
+          "uint64",
+          "INT",
+          "INTEGER",
+          "INT64",
+          "TINYINT",
+          "BYTEINT",
+          "SMALLINT",
+          "BIGINT",
+          "IntegerType",
+          "LongType"
+        ]
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "wine.csv",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "wine_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2021-12-12T02:35:21.444218Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.13.46"
+  }
+}

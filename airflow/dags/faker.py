@@ -25,7 +25,7 @@ default_args = {
      )
 def generate_data():
     @task()
-    def generate_random_data():
+    def generate_random_row():
         Path.cwd()
         df = pd.read_csv(DATA_PATH / 'input/wine.csv')
         random_row = df.sample(n=10)
@@ -37,7 +37,7 @@ def generate_data():
         dataFrame.to_csv(DATA_PATH / f'output/{file_name}.csv', index=False)
         logging.info("created file successfully")
 
-    data = generate_random_data()
+    data = generate_random_row()
     store(data)
 
 
