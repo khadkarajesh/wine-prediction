@@ -1,4 +1,3 @@
-import json
 import logging
 from pathlib import Path
 
@@ -12,7 +11,6 @@ from great_expectations.checkpoint.types.checkpoint_result import CheckpointResu
 from great_expectations.core.batch import BatchRequest
 from great_expectations_provider.operators.great_expectations import GreatExpectationsOperator
 from requests import Response
-import requests
 
 from airflow import AirflowException
 import great_expectations as ge
@@ -143,7 +141,7 @@ BASE_URL = "http://127.0.0.1:5000/api/v1"
 # dag = validate_data()
 
 
-@dag(dag_id='data-validator-task-flow-test-1',
+@dag(dag_id='data-validator-task-flow',
      default_args=default_args,
      description="Validates data",
      schedule_interval='*/2 * * * *',
@@ -152,35 +150,58 @@ BASE_URL = "http://127.0.0.1:5000/api/v1"
 def validation_task():
     @task()
     def validate_data_with_great_expectations():
-        data_frame = pd.read_csv(str(PRODUCTION_DATA))
-        ge_df = ge.from_pandas(data_frame)
-        result = ge_df.expect_column_values_to_be_between(
-            column="fixed acidity",
-            min_value=1,
-            max_value=2,
-            strict_min=True,
-            strict_max=True,
-            catch_exceptions=True
-        )
-        if not result['success']:
-            logging.info("could not validate schema")
-            raise AirflowException("Invalid Schema")
-        else:
-            logging.info("validated schema")
-        return data_frame.to_numpy().tolist()
+        # context = ge.data_context.DataContext(str(GE_ROOT_PATH))
+        # batch_kwargs_file = {
+        #     'path': str(Path.cwd()) + '/data/validation_data.csv',
+        #     'datasource': 'wine_datasource'
+        # }
+        # batch_file = context.get_batch(batch_kwargs_file, "wine_suite")
+        # results = context.run_validation_operator(assets_to_validate=[batch_file])
+        # if not results["success"]:
+        #     raise AirflowException("Validation of the data is not successful")
+        # else:
+        #     logging.info("oho success we found")
 
-    @task()
-    def predict(batch_data):
-        logging.info("reached here")
-        response: Response = requests.post(BASE_URL + "/batch-predictions", json=json.dumps(batch_data))
-        if response.status_code == 200:
-            response_body = response.json()
-            logging.info(f"response ::{response_body}")
+        context = ge.data_context.DataContext(str(GE_ROOT_PATH))
+        batch_request = {
+            'datasource_name': 'wine_datasource',
+            'data_connector_name': 'default_inferred_data_connector_name',
+            'data_asset_name': 'validation_data.csv'
+        }
+        expectation_suite_name = "wine_suite"
+        validator = context.get_validator(batch_request=BatchRequest(**batch_request),
+                                          expectation_suite_name=expectation_suite_name)
+        # validation_result = validator.validate_expectation(expectation_suite_name)
+        result = validator.validate(expectation_suite=expectation_suite_name, only_return_failures=True,
+                                    data_context=context)
+        if result:
+            logging.info(f"failed the data pipeline {result}")
         else:
-            logging.info(f"response ::{response}")
+            logging.info(f"succeed the validation pipeline")
+        # validation_result = validator.validate(expectation_suite=expectation_suite_name)
+        # logging.info(f"lets check validation result {validation_result}")
+        # checkpoint_config = {
+        #     "class_name": "SimpleCheckpoint",
+        #     "validations": [
+        #         {
+        #             "batch_request": batch_request,
+        #             "expectation_suite_name": expectation_suite_name
+        #         }
+        #     ]
+        # }
+        #
+        # checkpoint = SimpleCheckpoint(
+        #     f"_tmp_checkpoint_{expectation_suite_name}",
+        #     context,
+        #     **checkpoint_config
+        # )
+        # checkpoint_result = checkpoint.run()
+        # if checkpoint_result.success:
+        #     logging.info("bam success the operation")
+        # else:
+        #     logging.info("bam failed operation")
 
-    records = validate_data_with_great_expectations()
-    predict(records)
+    validate_data_with_great_expectations()
 
 
 dag = validation_task()

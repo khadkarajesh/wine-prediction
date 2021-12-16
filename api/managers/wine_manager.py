@@ -35,5 +35,21 @@ def save_prediction(wine: Wine):
     db.session.commit()
 
 
+def save_batch_prediction(bulk_data):
+    df = pd.DataFrame(columns=COLUMNS, data=bulk_data)
+    column_transformer = joblib.load(MODEL_DIR / COLUMN_TRANSFORMER)
+    df = column_transformer.fit_transform(df)
+
+    model = joblib.load(MODEL_DIR / MODEL)
+    encoder = joblib.load(MODEL_DIR / LABEL_ENCODER)
+    batch_records = []
+    for record in bulk_data:
+        wine = Wine.to_obj(record)
+        wine.predicted_label = encoder.inverse_transform(model.predict(df))[0]
+        batch_records.append(wine)
+    db.session.add_all(batch_records)
+    db.session.commit()
+
+
 def get_predictions():
     return Wine.query.all()
