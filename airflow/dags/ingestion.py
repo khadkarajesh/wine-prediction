@@ -1,7 +1,11 @@
 import json
 import logging
-from pathlib import Path
+import smtplib
+import ssl
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+from pathlib import Path
 import great_expectations as ge
 import pandas as pd
 import requests
@@ -26,15 +30,19 @@ DATA_OUTPUT_PATH = DATA_ROOT_PATH / 'output'
 PRODUCTION_DATA_INPUT_FILE = DATA_INPUT_PATH / 'wine.csv'
 PRODUCTION_DATA_OUTPUT_FILE = DATA_OUTPUT_PATH / MOCK_FILE_NAME
 PRODUCTION_DATA_DRIFT_OUTPUT_FILE = DATA_OUTPUT_PATH / DRIFT_FILE_NAME
+
 DRIFT_MIN = 1
 DRIFT_MAX = 2
 MIN = 6
 MAX = 20
+
 DATA_PATH = Path.cwd() / "airflow/data"
 BASE_URL = "http://127.0.0.1:5000/api/v1"
 
+NOTIFICATION_MESSAGE = "There is drift in data. please take corrective action ahead"
 
-@dag(dag_id='data-validator-task-flow-test-9',
+
+@dag(dag_id='data-validator-task-flow-test-12',
      default_args=default_args,
      description="Validates data",
      schedule_interval='*/5 * * * *',
@@ -75,11 +83,34 @@ def validation_task():
             strict_min=True
         )
         if not result['success']:
-            logging.info("could not validate schema")
+            send_email()
             raise AirflowException("Invalid Schema")
         else:
             logging.info("validated schema")
         return data_frame.to_numpy().tolist()
+
+    def send_email():
+        port = Variable.get("mail_port")
+        password = Variable.get("mail_password")
+        message = MIMEMultipart("alternative")
+        message["Subject"] = "Data Drift Detected"
+        message['From'] = Variable.get("sender_email")
+        message['To'] = Variable.get("receiver_email")
+
+        email_body = MIMEText(NOTIFICATION_MESSAGE, "plain")
+        message.attach(email_body)
+
+        context = ssl.create_default_context()
+        with smtplib.SMTP(Variable.get("smtp"), port) as server:
+            try:
+                sender_email = Variable.get("sender_email")
+                server.ehlo()
+                server.starttls(context=context)
+                server.ehlo()
+                server.login(sender_email, password)
+                server.sendmail(sender_email, Variable.get("receiver_email"), message.as_string())
+            except Exception as e:
+                logging.info(f"exception while sending email {e}")
 
     @task()
     def predict(batch_data):
