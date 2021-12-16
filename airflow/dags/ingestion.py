@@ -23,6 +23,7 @@ default_args = {
 
 MOCK_FILE_NAME = "validation_data.csv"
 DRIFT_FILE_NAME = "validation_data_drift.csv"
+
 GE_ROOT_PATH = Path.cwd() / 'great_expectations'
 DATA_ROOT_PATH = Path.cwd() / 'airflow/data'
 DATA_INPUT_PATH = DATA_ROOT_PATH / 'input'
@@ -42,13 +43,13 @@ BASE_URL = "http://127.0.0.1:5000/api/v1"
 NOTIFICATION_MESSAGE = "There is drift in data. please take corrective action ahead"
 
 
-@dag(dag_id='data-validator-task-flow-test-12',
+@dag(dag_id='data_ingestion_pipeline',
      default_args=default_args,
-     description="Validates data",
+     description="Data Ingestion Pipeline",
      schedule_interval='*/5 * * * *',
      start_date=days_ago(2),
-     tags=['data-validator-task-flow'])
-def validation_task():
+     tags=['data_ingestion_pipeline'])
+def ingestion_pipeline():
     @task()
     def generate():
         df = pd.read_csv(PRODUCTION_DATA_INPUT_FILE)
@@ -84,14 +85,13 @@ def validation_task():
         )
         if not result['success']:
             send_email()
-            raise AirflowException("Invalid Schema")
-        else:
-            logging.info("validated schema")
+            raise AirflowException("Data drift detected")
         return data_frame.to_numpy().tolist()
 
     def send_email():
         port = Variable.get("mail_port")
         password = Variable.get("mail_password")
+
         message = MIMEMultipart("alternative")
         message["Subject"] = "Data Drift Detected"
         message['From'] = Variable.get("sender_email")
@@ -104,11 +104,10 @@ def validation_task():
         with smtplib.SMTP(Variable.get("smtp"), port) as server:
             try:
                 sender_email = Variable.get("sender_email")
-                server.ehlo()
+                receiver_email = Variable.get("receiver_email")
                 server.starttls(context=context)
-                server.ehlo()
                 server.login(sender_email, password)
-                server.sendmail(sender_email, Variable.get("receiver_email"), message.as_string())
+                server.sendmail(sender_email, receiver_email, message.as_string())
             except Exception as e:
                 logging.info(f"exception while sending email {e}")
 
@@ -117,9 +116,7 @@ def validation_task():
         response: Response = requests.post(BASE_URL + "/batch-predictions", json=json.dumps(batch_data))
         if response.status_code == 200:
             response_body = response.json()
-            logging.info(f"response ::{response_body}")
-        else:
-            logging.info(f"response ::{response}")
+            logging.info(f"predicated successfully {response_body}")
 
     random_data = generate()
     file = store(random_data)
@@ -127,4 +124,4 @@ def validation_task():
     predict(records)
 
 
-dag = validation_task()
+dag = ingestion_pipeline()
