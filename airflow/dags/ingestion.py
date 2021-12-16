@@ -92,10 +92,13 @@ def ingestion_pipeline():
         port = Variable.get("mail_port")
         password = Variable.get("mail_password")
 
+        sender_email = Variable.get("sender_email")
+        receiver_email = Variable.get("receiver_email")
+
         message = MIMEMultipart("alternative")
         message["Subject"] = "Data Drift Detected"
-        message['From'] = Variable.get("sender_email")
-        message['To'] = Variable.get("receiver_email")
+        message['From'] = sender_email
+        message['To'] = receiver_email
 
         email_body = MIMEText(NOTIFICATION_MESSAGE, "plain")
         message.attach(email_body)
@@ -103,8 +106,6 @@ def ingestion_pipeline():
         context = ssl.create_default_context()
         with smtplib.SMTP(Variable.get("smtp"), port) as server:
             try:
-                sender_email = Variable.get("sender_email")
-                receiver_email = Variable.get("receiver_email")
                 server.starttls(context=context)
                 server.login(sender_email, password)
                 server.sendmail(sender_email, receiver_email, message.as_string())
