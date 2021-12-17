@@ -86,9 +86,9 @@ def ingestion_pipeline():
             strict_min=True
         )
 
-        # if not result['success']:
-        #     send_email()
-        #     raise AirflowException("Data drift detected")
+        if not result['success']:
+            send_email()
+            raise AirflowException("Data drift detected")
         return data_frame.to_numpy().tolist()
 
     def send_email():
