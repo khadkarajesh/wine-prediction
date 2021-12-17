@@ -5,7 +5,7 @@ import pandas as pd
 
 from api.common import db
 from api.ml import COLUMN_TRANSFORMER, MODEL, LABEL_ENCODER
-from api.models.unprocessed_wine import UnprocessedWine
+from api.models.training_wine import TrainingWine
 from api.models.wine import Wine
 
 MODEL_DIR = Path.cwd() / Path('api/ml/models')
@@ -39,7 +39,7 @@ def save_prediction(wine: Wine):
 def save_unprocessed_data(bulk_data):
     batch_records = []
     for record in bulk_data:
-        wine = UnprocessedWine.to_obj(record)
+        wine = TrainingWine.to_obj(record)
         batch_records.append(wine)
     db.session.add_all(batch_records)
     db.session.commit()

@@ -20,7 +20,7 @@ default_args = {
 }
 
 
-@dag(dag_id='production_data_seeder',
+@dag(dag_id='production_data_seeder_1',
      default_args=default_args,
      description="Seed production data",
      start_date=days_ago(2),
@@ -28,21 +28,19 @@ default_args = {
      )
 def generate_data():
     @task()
-    def generate_random_row():
+    def read_training_data():
         df = pd.read_csv(DATA_PATH / 'input/wine.csv')
-        random_row = df.sample(n=20)
-        return random_row
+        return df
 
     @task()
     def store(data_frame: pd.DataFrame):
-        data_frame['fixed acidity'] = data_frame['fixed acidity'] * random.uniform(1.0, 2.0)
         batch_data = data_frame.to_numpy().tolist()
         response: Response = requests.post(BASE_URL + "/batch-data-uploads", json=json.dumps(batch_data))
         if response.status_code == 200:
             response_body = response.json()
             logging.info(f"saved data successfully {response_body}")
 
-    data = generate_random_row()
+    data = read_training_data()
     store(data)
 
 

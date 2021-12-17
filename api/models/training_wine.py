@@ -2,8 +2,8 @@ from api.common import db
 from api.models import BaseModel
 
 
-class UnprocessedWine(BaseModel):
-    __tablename__ = 'unprocessed_wines'
+class TrainingWine(BaseModel):
+    __tablename__ = 'training_wines'
     fixed_acidity = db.Column(db.Float, nullable=False)
     volatile_acidity = db.Column(db.Float, nullable=False)
     citric_acid = db.Column(db.Float, nullable=False)
@@ -16,10 +16,11 @@ class UnprocessedWine(BaseModel):
     sulphates = db.Column(db.Float, nullable=False)
     alcohol = db.Column(db.Float, nullable=False)
     quality = db.Column(db.Float, nullable=False)
+    label = db.Column(db.String)
 
     @staticmethod
     def to_obj(data):
-        wine = UnprocessedWine()
+        wine = TrainingWine()
         wine.fixed_acidity = data[0]
         wine.volatile_acidity = data[1]
         wine.citric_acid = data[2]
@@ -32,4 +33,5 @@ class UnprocessedWine(BaseModel):
         wine.sulphates = data[9]
         wine.alcohol = data[10]
         wine.quality = data[11]
+        wine.label = data[12]
         return wine
