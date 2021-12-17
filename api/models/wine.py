@@ -25,3 +25,20 @@ class Wine(BaseModel):
                 self.total_sulfur_dioxide, self.density,
                 self.ph, self.sulphates,
                 self.alcohol, self.quality]
+
+    @staticmethod
+    def to_obj(data):
+        wine = Wine()
+        wine.fixed_acidity = data[0]
+        wine.volatile_acidity = data[1]
+        wine.citric_acid = data[2]
+        wine.residual_sugar = data[3]
+        wine.chlorides = data[4]
+        wine.free_sulfur_dioxide = data[5]
+        wine.total_sulfur_dioxide = data[6]
+        wine.density = data[7]
+        wine.ph = data[8]
+        wine.sulphates = data[9]
+        wine.alcohol = data[10],
+        wine.quality = data[11]
+        return wine

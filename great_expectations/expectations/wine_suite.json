@@ -1,0 +1,17 @@
+{
+  "expectation_suite_name": "wine_suite",
+  "expectations": [
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 8,
+        "min_value": 6
+      },
+      "meta": {}
+    }
+  ]
+}

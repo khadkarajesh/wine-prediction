@@ -7,8 +7,10 @@ pandas
 scikit-learn
 numpy
 sklearn
+apache-airflow
 requests
 streamlit
 python-dotenv
 marshmallow-sqlalchemy
 psycopg2
+marshmallow

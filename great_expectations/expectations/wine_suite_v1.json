@@ -1,0 +1,32 @@
+{
+  "expectation_suite_name": "wine_suite_v1",
+  "expectations": [
+    {
+      "expectation_context": {
+        "description": null
+      },
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 7,
+        "min_value": 8
+      },
+      "meta": {}
+    }
+  ],
+    "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "wine.csv",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "wine_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2021-12-12T02:35:21.444218Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.13.46"
+  }
+}
