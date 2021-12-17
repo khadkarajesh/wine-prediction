@@ -32,10 +32,10 @@ PRODUCTION_DATA_INPUT_FILE = DATA_INPUT_PATH / 'wine.csv'
 PRODUCTION_DATA_OUTPUT_FILE = DATA_OUTPUT_PATH / MOCK_FILE_NAME
 PRODUCTION_DATA_DRIFT_OUTPUT_FILE = DATA_OUTPUT_PATH / DRIFT_FILE_NAME
 
-DRIFT_MIN = 1
-DRIFT_MAX = 2
-MIN = 6
-MAX = 20
+DRIFT_MIN = 1.0
+DRIFT_MAX = 2.0
+MIN = 6.0
+MAX = 20.0
 
 DATA_PATH = Path.cwd() / "airflow/data"
 BASE_URL = "http://127.0.0.1:5000/api/v1"
@@ -76,6 +76,8 @@ def ingestion_pipeline():
     def validate(file_name: str):
         data_frame = pd.read_csv(PRODUCTION_DATA_DRIFT_OUTPUT_FILE if is_drift() else file_name)
         ge_df = ge.from_pandas(data_frame)
+
+        ge_df.expect_column_values_to_not_be_null(column="fixed acidity")
         result = ge_df.expect_column_values_to_be_between(
             column="fixed acidity",
             min_value=get_min_value(),
@@ -83,9 +85,10 @@ def ingestion_pipeline():
             strict_max=True,
             strict_min=True
         )
-        if not result['success']:
-            send_email()
-            raise AirflowException("Data drift detected")
+
+        # if not result['success']:
+        #     send_email()
+        #     raise AirflowException("Data drift detected")
         return data_frame.to_numpy().tolist()
 
     def send_email():
