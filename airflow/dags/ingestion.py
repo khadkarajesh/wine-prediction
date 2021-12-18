@@ -32,10 +32,10 @@ PRODUCTION_DATA_INPUT_FILE = DATA_INPUT_PATH / 'wine.csv'
 PRODUCTION_DATA_OUTPUT_FILE = DATA_OUTPUT_PATH / MOCK_FILE_NAME
 PRODUCTION_DATA_DRIFT_OUTPUT_FILE = DATA_OUTPUT_PATH / DRIFT_FILE_NAME
 
-DRIFT_MIN = 1.0
-DRIFT_MAX = 2.0
-MIN = 3.0
-MAX = 20.0
+DRIFT_MIN = float(1.0)
+DRIFT_MAX = float(2.0)
+MIN = float(3.0)
+MAX = float(20.0)
 
 DATA_PATH = Path.cwd() / "airflow/data"
 BASE_URL = "http://127.0.0.1:5000/api/v1"
@@ -43,7 +43,7 @@ BASE_URL = "http://127.0.0.1:5000/api/v1"
 NOTIFICATION_MESSAGE = "There is drift in data. please take corrective action ahead"
 
 
-@dag(dag_id='data_ingestion_pipeline',
+@dag(dag_id='data_ingestion_pipeline_7',
      default_args=default_args,
      description="Data Ingestion Pipeline",
      schedule_interval='*/5 * * * *',
@@ -80,6 +80,7 @@ def ingestion_pipeline():
         ge_df.expect_column_values_to_not_be_null(column="fixed acidity")
         result = ge_df.expect_column_values_to_be_between(
             column="fixed acidity",
+            allow_cross_type_comparisons=True,
             min_value=get_min_value(),
             max_value=get_max_value(),
             strict_max=True,
