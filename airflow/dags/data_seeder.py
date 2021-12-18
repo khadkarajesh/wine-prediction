@@ -20,7 +20,7 @@ default_args = {
 }
 
 
-@dag(dag_id='production_data_seeder_1',
+@dag(dag_id='production_data_seeder',
      default_args=default_args,
      description="Seed production data",
      start_date=days_ago(2),
