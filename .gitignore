@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 .idea/*
+
+# File created by the Vi text editor
+..env.swp
