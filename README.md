@@ -1,6 +1,20 @@
 # wine-prediction
 Wine prediction classifies the whether the wine is white or red based upon the parameters like: acidity, sugar etc.
 
+## Architecture Diagram
+------
+
+## Used Technologies
+------
+
+## Steps to Run Application
+1. Create Virtual Environment and install all requirements stuffs like that
+2. Run API
+3. Run Airflow
+4. Run Frontend
+
+Link to the detail section with detail
+
 Right now repository consist the following apps:
 
 #### API
@@ -35,10 +49,11 @@ It needs to run before streamlit, to consume API from frontend.
    flask run app.py
    ```
 
-
 ### Run Frontend application
 Then we run the frontend server using cmd given below, now we input the feature and save that predicted label along with the given features in our postgresSQL.
 
    ```python
    streamlit run run.py
    ```
+   
+
