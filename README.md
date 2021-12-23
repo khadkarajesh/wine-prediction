@@ -4,14 +4,53 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 ## Architecture Diagram
 ------
 
+![dsp *architecture*]
+
+[dsp *architecture*]: architecture.jpg "project architecture"
 ## Used Technologies
 ------
+* Flask
+* Python
+* Streamlit
+* Postgresql
+* AirFlow 2.2
+* Grafana
 
 ## Steps to Run Application
-1. Create Virtual Environment and install all requirements stuffs like that
-2. Run API
-3. Run Airflow
-4. Run Frontend
+1. Create a virtual environment with python3
+```shell
+python3 -m venv wine_prediction
+```
+Activate the virtual environment:
+```shell
+cd wine_prediction
+source /bin/activate
+```
+2. Install dependencies 
+```shell
+pip install -r requirements.txt
+   ```
+2. Setup Script path and environmental variables
+```shell
+~/wine-prediction/api/app.py
+
+FLASK_ENV=development;
+APP_SETTINGS=config.DevelopmentConfig
+```
+3. Run API
+```shell
+flask run app.py
+```
+Once we run the webserver you can access server in
+http://127.0.0.1:5000/
+4. Run Frontend in another terminal
+```shell
+# To view the frontend application & emulate the server run
+streamlit run run.py
+```
+We can view the frontend application in the following link  
+http://127.0.0.1:8501/
+5. Run Airflow
 
 Link to the detail section with detail
 
@@ -30,7 +69,7 @@ Right now repository consist the following apps:
 1. create virtual environment and activate it
 2. Install dependencies 
    ```python
-   pip install -r requirements.txt
+pip install -r requirements.txt
    ```
 3. setup environment variable
    ```shell
