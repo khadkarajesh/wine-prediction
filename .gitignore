@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 .idea/*
+
+airflow/airflow.cfg
+airflow/airflow.db

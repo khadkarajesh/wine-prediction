@@ -43,7 +43,7 @@ BASE_URL = "http://127.0.0.1:5000/api/v1"
 NOTIFICATION_MESSAGE = "There is drift in data. please take corrective action ahead"
 
 
-@dag(dag_id='data_ingestion_pipeline_7',
+@dag(dag_id='data_ingestion_pipeline',
      default_args=default_args,
      description="Data Ingestion Pipeline",
      schedule_interval='*/5 * * * *',
