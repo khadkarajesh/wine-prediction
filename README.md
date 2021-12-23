@@ -13,7 +13,9 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 3. [Run Airflow](#run-airflow)
 4. [Run Frontend](#run-frontend)
 
+### Run API
 
+### Run Frontend
 
 ### Run Airflow
 1. Create database user and grant all permission to that user which will be used to store the logs of airflow
