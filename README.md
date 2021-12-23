@@ -10,7 +10,7 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 ## Steps to Run Application
 1. Create Virtual Environment and install all requirements stuffs like that
 2. Run API
-3. Run Airflow
+3. [ Run Airflow ] (#Run-Airflow)
 4. Run Frontend
 
 
