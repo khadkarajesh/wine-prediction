@@ -133,3 +133,5 @@ dmypy.json
 airflow/airflow.cfg
 airflow/airflow.db
 airflow/airflow-webserver.pid
+airflow/logs
+airflow/unittests.cfg
