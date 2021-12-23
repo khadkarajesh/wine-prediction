@@ -132,3 +132,4 @@ dmypy.json
 
 airflow/airflow.cfg
 airflow/airflow.db
+airflow/airflow-webserver.pid
