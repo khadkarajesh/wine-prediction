@@ -26,6 +26,7 @@ COLUMNS = ["fixed acidity",
 def save_prediction(wine: Wine):
     df = pd.DataFrame(columns=COLUMNS, data=[wine.to_array()])
     column_transformer = joblib.load(MODEL_DIR / COLUMN_TRANSFORMER)
+    print(column_transformer)
     df = column_transformer.fit_transform(df)
 
     model = joblib.load(MODEL_DIR / MODEL)

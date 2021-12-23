@@ -14,3 +14,4 @@ python-dotenv
 marshmallow-sqlalchemy
 psycopg2
 marshmallow
+flask-marshmallow

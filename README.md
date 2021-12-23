@@ -14,17 +14,23 @@ Right now repository consist the following apps:
 
 ## Prerequisites 
 1. Create virtual environment and activate it
+```shell
 $ python3 -m venv wine_prediction
+```
 To activate it:
-$ cd wine_prediction
-$ source /bin/activate
+```shell
+cd wine_prediction
+source /bin/activate
+```
 
 2. Install dependencies 
-   ```python
+   ```shell
    pip install -r requirements.txt
    ```
 For the necessary dependencies
-$ sudo apt install libpq-dev python3-dev gcc
+```shell
+sudo apt install libpq-dev python3-dev gcc
+```
 
 3. Setup environment variable
    ```shell
