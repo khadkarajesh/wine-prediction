@@ -47,7 +47,6 @@ Wine prediction classifies the whether the wine is white or red based upon the p
    airflow scheduler
    ```
 6. Start Web Server
-   Don't forget to set environment variable as described in step 5 before starting ```webserver```
    ```bash
    # Set Environment variable to use postgresql as database to store airflow log
    export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_user:airflow_pass@localhost/wine_airflow
