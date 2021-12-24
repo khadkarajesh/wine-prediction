@@ -26,7 +26,7 @@ Wine prediction classifies the whether the wine is white or red based upon the p
    ```
 
 ### Run Frontend
-1. Navigate to the ```frontend``` directory of application
+1. Navigate to the ```/frontend``` directory of application
 2. Run streamlit application as:
 ```bash
    streamlit run run.py
