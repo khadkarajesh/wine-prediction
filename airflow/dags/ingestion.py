@@ -63,18 +63,18 @@ def ingestion_pipeline():
         dataFrame.to_csv(PRODUCTION_DATA_OUTPUT_FILE, index=False)
         return str(PRODUCTION_DATA_OUTPUT_FILE)
 
-    def is_drift():
-        return Variable.get("drift") == 'true'
+    def is_force_validation_failure():
+        return Variable.get("mimic_validation_fail") == 'true'
 
     def get_max_value():
-        return DRIFT_MAX if is_drift() else MAX
+        return DRIFT_MAX if is_force_validation_failure() else MAX
 
     def get_min_value():
-        return DRIFT_MIN if is_drift() else MIN
+        return DRIFT_MIN if is_force_validation_failure() else MIN
 
     @task()
     def validate(file_name: str):
-        data_frame = pd.read_csv(PRODUCTION_DATA_DRIFT_OUTPUT_FILE if is_drift() else file_name)
+        data_frame = pd.read_csv(PRODUCTION_DATA_DRIFT_OUTPUT_FILE if is_force_validation_failure() else file_name)
         ge_df = ge.from_pandas(data_frame)
 
         ge_df.expect_column_values_to_not_be_null(column="fixed acidity")
