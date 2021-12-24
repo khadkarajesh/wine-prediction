@@ -2,9 +2,8 @@
 Wine prediction classifies the whether the wine is white or red based upon the parameters like: acidity, sugar etc.
 
 ## Architecture Diagram
-![dsp *architecture*]
+![airflow_diagram](/media/architecture.png)
 
-[dsp *architecture*]: media/architecture.jpg "project architecture"
 ## Used Technologies
 * Flask
 * Python
