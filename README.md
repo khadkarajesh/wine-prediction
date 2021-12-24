@@ -4,23 +4,55 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 ## Architecture Diagram
 ------
 
+![dsp *architecture*]
+
+[dsp *architecture*]: media/architecture.jpg "project architecture"
 ## Used Technologies
 ------
+* Flask
+* Python
+* Streamlit
+* Postgresql
+* AirFlow 2.2
+* Grafana
 
 ## Steps to Run Application
-1. Create Virtual Environment and install all requirements stuffs like that
+1. [Install Dependencies](#install-dependencies)
 2. [Run API](#run-api)
 3. [Run Airflow](#run-airflow)
 4. [Run Frontend](#run-frontend)
 
+### Install Dependencies
+1. Create a virtual environment with python3
+   ```shell
+   python3 -m venv wine_prediction
+   ```
+2. Activate the virtual environment:
+   ```shell
+   cd wine_prediction
+   source /bin/activate
+   ```
+2. Install dependencies 
+   ```shell
+   pip install -r requirements.txt
+   ```
+
 ### Run API
-1. Navigate to root of the project
-2. Set environment variables
+1. Configure the database
+   Create database and add .env file in ```api/.env```. template of ```.env``` is as follows:
+   ```shell
+   DATABASE_NAME =
+   DATABASE_PORT =
+   USER_NAME =
+   USER_PASSWORD =
+   ```
+2. Navigate to root of the project
+3. Set environment variables
    ```bash
    export FLASK_APP=app:create_app
    export APP_SETTINGS="api.config.DevelopmentConfig"
    ```
-3. Run Flask
+4. Run Flask
    ```bash
    flask run
    ```
@@ -68,9 +100,9 @@ Wine prediction classifies the whether the wine is white or red based upon the p
    
    airflow webserver
    ```
-Once you run the webserver you can accesss airflow dashboard on ```http://localhost:8080```.
+Once you run the webserver you can access airflow dashboard on ```http://localhost:8080```.
 
-Airflow has following data ingestion pipeline:
+Airflow has the following data ingestion pipeline:
 
 ![airflow_diagram](/media/airflow.png)
 
