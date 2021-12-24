@@ -59,7 +59,7 @@ Airflow has following data ingestion pipeline:
 
 ![airflow_diagram](/media/airflow.png)
 
-When the data validation fails airflow sends email to the respective member which can be configured by adding following variables in airflow. To check this scenario we can enable drift
+When the data validation fails, airflow sends email to the respective member which can be configured by adding following variables in airflow. To check this scenario we can enable ```mimic_validation_fail``` in airflow variable.
 
 ![airflow_diagram](/media/airflow_variable.png)
 
