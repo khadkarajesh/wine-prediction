@@ -40,12 +40,12 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 
 ### Run API
 
-1. Configure the database Create database and add .env file in ```api/.env```. template of ```.env``` is as follows:
+1. Create database and add .env file in ```api/.env```. template of ```.env``` is as follows:
    ```shell
-   DATABASE_NAME =
-   DATABASE_PORT =
-   USER_NAME =
-   USER_PASSWORD =
+   DATABASE_NAME = YOUR_DATABASE
+   DATABASE_PORT = 5432
+   USER_NAME = YOUR_DATABASE_USER
+   USER_PASSWORD = YOUR_DATABASE_USER_PASSWORD
    ```
 2. Navigate to root of the project
 3. Set environment variables
