@@ -6,7 +6,7 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 
 ![dsp *architecture*]
 
-[dsp *architecture*]: architecture.jpg "project architecture"
+[dsp *architecture*]: media/architecture.jpg "project architecture"
 ## Used Technologies
 ------
 * Flask
@@ -17,82 +17,98 @@ Wine prediction classifies the whether the wine is white or red based upon the p
 * Grafana
 
 ## Steps to Run Application
+1. [Install Dependencies](#install-dependencies)
+2. [Run API](#run-api)
+3. [Run Airflow](#run-airflow)
+4. [Run Frontend](#run-frontend)
+
+### Install Dependencies
 1. Create a virtual environment with python3
-```shell
-python3 -m venv wine_prediction
-```
-Activate the virtual environment:
-```shell
-cd wine_prediction
-source /bin/activate
-```
-2. Install dependencies 
-```shell
-pip install -r requirements.txt
-   ```
-2. Setup Script path and environmental variables
-```shell
-~/wine-prediction/api/app.py
-
-FLASK_ENV=development;
-APP_SETTINGS=config.DevelopmentConfig
-```
-3. Run API
-```shell
-flask run app.py
-```
-Once we run the webserver you can access server in
-http://127.0.0.1:5000/
-4. Run Frontend in another terminal
-```shell
-# To view the frontend application & emulate the server run
-streamlit run run.py
-```
-We can view the frontend application in the following link  
-http://127.0.0.1:8501/
-5. Run Airflow
-
-Link to the detail section with detail
-
-Right now repository consist the following apps:
-
-#### API
-- Flask Application which uses the machine learning model to predict the wine type and stores data into the Postgresql. 
-
-#### Frontend
-- Streamlit application which provides form to input wine attributes
-
-#### App
-- App consists the machine learning pipeline
-
-## Prerequisites 
-1. create virtual environment and activate it
-2. Install dependencies 
-   ```python
-pip install -r requirements.txt
-   ```
-3. setup environment variable
    ```shell
-   export config=DevelopmentConfig
+   python3 -m venv wine_prediction
    ```
-4. create database for posgresSQL 
-  
-   1. creaate database in posgresSQL
-   2. create .env in the project schemas directory to provide postgresSQL db name, user, password and db port.
-   default posgresSQL user : postgres
-
-### Run Flask API
-It needs to run before streamlit, to consume API from frontend. 
-
-   ```python
-   flask run app.py
+2. Activate the virtual environment:
+   ```shell
+   cd wine_prediction
+   source /bin/activate
+   ```
+2. Install dependencies 
+   ```shell
+   pip install -r requirements.txt
    ```
 
-### Run Frontend application
-Then we run the frontend server using cmd given below, now we input the feature and save that predicted label along with the given features in our postgresSQL.
+### Run API
+1. Configure the database
+   Create database and add .env file in ```api/.env```. template of ```.env``` is as follows:
+   ```shell
+   DATABASE_NAME =
+   DATABASE_PORT =
+   USER_NAME =
+   USER_PASSWORD =
+   ```
+2. Navigate to root of the project
+3. Set environment variables
+   ```bash
+   export FLASK_APP=app:create_app
+   export APP_SETTINGS="api.config.DevelopmentConfig"
+   ```
+4. Run Flask
+   ```bash
+   flask run
+   ```
 
-   ```python
+### Run Frontend
+1. Navigate to the ```/frontend``` directory of application
+2. Run streamlit application as:
+```bash
    streamlit run run.py
+```
+
+### Run Airflow
+1. Create database user and grant all permission to that user which will be used to store the logs of airflow
+   
+   Create user using psql shell. 
+   ```psql
+   CREATE DATABASE wine_airflow;
+   CREATE USER airflow_user WITH ENCRYPTED PASSWORD 'airflow_pass';
+   GRANT ALL PRIVILEGES ON DATABASE wine_airflow TO airflow_user;
    ```
+
+2. Go to root directory of project and set env variable ```AIRFLOW_HOME``` as:
+   ```bash
+   export AIRFLOW_HOME=$PWD/airflow
+   ```
+3. Initialize database
+   ```bash
+   airflow db init
+   ```
+4. Create User (username:admin, password:admin) to access the airflow web application which will be run on ```http://localhost:8080```
+   ```bash
+   airflow users create --username admin --firstname admin --lastname admin --role Admin --email admin@gmail.com --password admin
+   ```
+5. Start Airflow Scheduler
+   ```bash
+   # Set Environment variable to use postgresql as database to store airflow log
+   export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_user:airflow_pass@localhost/wine_airflow
+   
+   airflow scheduler
+   ```
+6. Start Web Server
+   ```bash
+   # Set Environment variable to use postgresql as database to store airflow log
+   export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_user:airflow_pass@localhost/wine_airflow
+   
+   airflow webserver
+   ```
+Once you run the webserver you can access airflow dashboard on ```http://localhost:8080```.
+
+Airflow has the following data ingestion pipeline:
+
+![airflow_diagram](/media/airflow.png)
+
+When the data validation fails, airflow sends email to the respective member which can be configured by adding following variables in airflow. To check this scenario we can enable ```mimic_validation_fail``` in airflow variable.
+
+![airflow_diagram](/media/airflow_variable.png)
+
    
 

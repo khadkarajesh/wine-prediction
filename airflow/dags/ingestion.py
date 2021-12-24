@@ -21,6 +21,9 @@ default_args = {
     'depends_on_past': False,
 }
 
+FEATURE_FIXED_ACIDITY = "fixed acidity"
+VALIDATION_FAIL_MIMIC_FLAG = "mimic_validation_fail"
+
 MOCK_FILE_NAME = "validation_data.csv"
 DRIFT_FILE_NAME = "validation_data_drift.csv"
 
@@ -31,6 +34,14 @@ DATA_OUTPUT_PATH = DATA_ROOT_PATH / 'output'
 PRODUCTION_DATA_INPUT_FILE = DATA_INPUT_PATH / 'wine.csv'
 PRODUCTION_DATA_OUTPUT_FILE = DATA_OUTPUT_PATH / MOCK_FILE_NAME
 PRODUCTION_DATA_DRIFT_OUTPUT_FILE = DATA_OUTPUT_PATH / DRIFT_FILE_NAME
+
+
+MAIL_PORT = "mail_port"
+MAIL_PASSWORD = "mail_password"
+SENDER_EMAIL = "sender_email"
+RECEIVER_EMAIL = "receiver_email"
+SMTP = "smtp"
+
 
 DRIFT_MIN = float(1.0)
 DRIFT_MAX = float(2.0)
@@ -63,23 +74,23 @@ def ingestion_pipeline():
         dataFrame.to_csv(PRODUCTION_DATA_OUTPUT_FILE, index=False)
         return str(PRODUCTION_DATA_OUTPUT_FILE)
 
-    def is_drift():
-        return Variable.get("drift") == 'true'
+    def is_force_validation_failure():
+        return Variable.get(VALIDATION_FAIL_MIMIC_FLAG) == 'true'
 
     def get_max_value():
-        return DRIFT_MAX if is_drift() else MAX
+        return DRIFT_MAX if is_force_validation_failure() else MAX
 
     def get_min_value():
-        return DRIFT_MIN if is_drift() else MIN
+        return DRIFT_MIN if is_force_validation_failure() else MIN
 
     @task()
     def validate(file_name: str):
-        data_frame = pd.read_csv(PRODUCTION_DATA_DRIFT_OUTPUT_FILE if is_drift() else file_name)
+        data_frame = pd.read_csv(PRODUCTION_DATA_DRIFT_OUTPUT_FILE if is_force_validation_failure() else file_name)
         ge_df = ge.from_pandas(data_frame)
 
-        ge_df.expect_column_values_to_not_be_null(column="fixed acidity")
+        ge_df.expect_column_values_to_not_be_null(column=FEATURE_FIXED_ACIDITY)
         result = ge_df.expect_column_values_to_be_between(
-            column="fixed acidity",
+            column=FEATURE_FIXED_ACIDITY,
             allow_cross_type_comparisons=True,
             min_value=get_min_value(),
             max_value=get_max_value(),
@@ -93,11 +104,11 @@ def ingestion_pipeline():
         return data_frame.to_numpy().tolist()
 
     def send_email():
-        port = Variable.get("mail_port")
-        password = Variable.get("mail_password")
+        port = Variable.get(MAIL_PORT)
+        password = Variable.get(MAIL_PASSWORD)
 
-        sender_email = Variable.get("sender_email")
-        receiver_email = Variable.get("receiver_email")
+        sender_email = Variable.get(SENDER_EMAIL)
+        receiver_email = Variable.get(RECEIVER_EMAIL)
 
         message = MIMEMultipart("alternative")
         message["Subject"] = "Data Drift Detected"
@@ -108,7 +119,7 @@ def ingestion_pipeline():
         message.attach(email_body)
 
         context = ssl.create_default_context()
-        with smtplib.SMTP(Variable.get("smtp"), port) as server:
+        with smtplib.SMTP(Variable.get(SMTP), port) as server:
             try:
                 server.starttls(context=context)
                 server.login(sender_email, password)
