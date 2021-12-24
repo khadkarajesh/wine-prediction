@@ -1,6 +1,23 @@
 # wine-prediction
+Wine-Prediction classifies the wine label based upon following features:
+- fixed acidity
+- volatile acidity
+- citric acid
+- residual sugar
+- chlorides
+- free sulfur dioxide
+- total sulfur dioxide
+- density
+- pH
+- sulphates
+- alcohol
+- quality
+- label
 
-Wine prediction classifies the whether the wine is white or red based upon the parameters like: acidity, sugar etc.
+This application is built to demonstrate the machine learning pipeline using widely used technologies. 
+
+# Dataset
+Dataset is extracted from the [UCI](https://archive.ics.uci.edu/ml/datasets/wine).
 
 ## Architecture Diagram
 
